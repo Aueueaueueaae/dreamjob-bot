@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+data/
+bot.log
+bot.log.*
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.venv/
+venv/
+.ruff_cache/
+tools/
+run.bat

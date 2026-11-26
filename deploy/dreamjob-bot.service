@@ -1,0 +1,18 @@
+[Unit]
+Description=DreamJob HH Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bot
+Group=bot
+WorkingDirectory=/opt/dreamjob-bot
+EnvironmentFile=/opt/dreamjob-bot/.env
+ExecStart=/opt/dreamjob-bot/.venv/bin/python bot.py
+Restart=always
+RestartSec=10
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target
