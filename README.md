@@ -57,6 +57,9 @@ python bot.py
 
 ## Деплой на сервер
 
+Репозиторий приватный. На сервере либо выполните `gh auth login`, либо используйте
+personal access token / deploy key, чтобы `git clone` имел доступ.
+
 ### Вариант 1: Docker (рекомендуется)
 
 ```bash
@@ -84,7 +87,7 @@ docker compose up -d --build
 
 ```bash
 sudo apt update
-sudo apt install -y python3-venv git
+sudo apt install -y python3-venv git nano
 sudo useradd -r -m -d /opt/dreamjob-bot -s /bin/false bot
 
 sudo git clone https://github.com/Aueueaueueaae/dreamjob-bot.git /opt/dreamjob-bot
@@ -113,6 +116,8 @@ sudo journalctl -u dreamjob-bot -f
   работать сразу после деплоя — скорее всего, хостинг попал под антибот.
   В этом случае лучше российский VPS или другая сеть.
 - Не коммитьте `.env`: он уже в `.gitignore` и `.dockerignore`.
+- Если хотите перенести избранное и чёрный список с домашнего ПК — скопируйте
+  `data/bot.sqlite3` в `data/` на сервере до первого запуска.
 
 ## Настройки `.env`
 
